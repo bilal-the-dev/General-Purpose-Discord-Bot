@@ -31,7 +31,7 @@ const generateTicketCloseEmbed = function (user) {
 	return generateGeneralEmbed({
 		title: "Ticket Support",
 		description:
-			"Please be patient while the staff approaches and solve your issue",
+			"Tenga paciencia mientras el personal viene y resuelve su problema.",
 		thumbnail: user.displayAvatarURL(),
 	});
 };
