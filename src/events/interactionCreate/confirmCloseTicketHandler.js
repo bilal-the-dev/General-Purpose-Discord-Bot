@@ -18,13 +18,11 @@ module.exports = async (client, interaction) => {
 
 		await interaction.deferReply({ ephemeral: true });
 
-		// if (
-		//   !member.permissions.has(PermissionFlagsBits.Administrator)
-		// ) {
-		//   throw new Error(
-		//     "You are not authorized to use this command. This command is limited to administrators."
-		//   );
-		// }
+		if (!member.permissions.has(PermissionFlagsBits.Administrator)) {
+			throw new Error(
+				"No está autorizado a utilizar este botón. Este botón está limitado a administradores."
+			);
+		}
 
 		const buttons = generateConfirmationButtons();
 

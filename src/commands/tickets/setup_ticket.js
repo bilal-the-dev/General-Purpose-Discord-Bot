@@ -47,7 +47,7 @@ module.exports = {
 			required: true,
 		},
 	],
-	// permissionsRequired: [PermissionFlagsBits.Administrator],
+	permissionsRequired: [PermissionFlagsBits.Administrator],
 
 	callback: async (_, interaction) => {
 		try {
