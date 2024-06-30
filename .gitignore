@@ -1,0 +1,4 @@
+.env
+node_modules
+ticket.json
+welcome_leave.json

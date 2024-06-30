@@ -1,0 +1,21 @@
+{
+	"categories": {
+		"Purchase Premium": {
+			"categoryId": "1256277141008420864",
+			"description": "Make a purchase",
+			"icon": "🧨"
+		},
+		"Report An Issue": {
+			"categoryId": "1256277287142166568",
+			"description": "Report an issue",
+			"icon": "🎨"
+		},
+		"Others": {
+			"categoryId": "1256277335754281020",
+			"description": "Other issues",
+			"icon": "🎱"
+		}
+	},
+	"STAFF_ROLE_ID": "1219446661697507459",
+	"TRANSCRIPT_CHANNEL_ID": "1255052029500588042"
+}
