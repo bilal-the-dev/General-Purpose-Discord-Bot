@@ -51,7 +51,7 @@ module.exports = {
 			await interaction.deferReply();
 
 			const messageType = options.getString("type");
-			const text = options.getString("message");
+			const text = options.getString("mensaje");
 			let attachment;
 
 			await replyOrEditInteraction(
