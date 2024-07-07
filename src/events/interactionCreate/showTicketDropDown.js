@@ -16,8 +16,8 @@ module.exports = async (client, interaction) => {
 		await interaction.deferReply({ ephemeral: true });
 
 		const embed = generateGeneralEmbed({
-			title: "Selecciona tu problema",
-			description: `Seleccione a continuación la opción que corresponde a su problema`,
+			title: "Seleccione la Asistencia técnica",
+			description: `Selecciona la opción adecuada acorde a tu duda o inconveniente`,
 		});
 		const row = generateTicketDropDown();
 

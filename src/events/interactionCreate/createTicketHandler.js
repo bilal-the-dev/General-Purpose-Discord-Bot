@@ -7,19 +7,24 @@ const {
 	handleInteractionError,
 	replyOrEditInteraction,
 } = require("../../utils/interaction");
-const { createTicketChannel } = require("../../utils/misc");
+const {
+	createTicketChannel,
+	deletePreviousTickets,
+} = require("../../utils/misc");
 const config = require("../../../ticket.json");
 module.exports = async (_, interaction) => {
 	try {
 		if (!interaction.isStringSelectMenu()) return;
 
-		const { customId, values, user, guild } = interaction;
+		const { customId, client, user, guild } = interaction;
 
 		if (customId !== "openTicket") return;
 
 		await interaction.deferReply({ ephemeral: true });
 
-		const channel = await createTicketChannel(guild, values[0], user);
+		await deletePreviousTickets(client, user.id);
+
+		const channel = await createTicketChannel(guild, user);
 
 		const embed = generateTicketCloseEmbed(user);
 		const button = generateTicketCloseButton();
@@ -29,7 +34,7 @@ module.exports = async (_, interaction) => {
 		});
 
 		await channel.send({
-			content: `<@&${config.STAFF_ROLE_ID}> ${user}`,
+			content: `<@&${config.STAFF_ROLE_ID}>`,
 			embeds: [embed],
 			components: [button],
 		});

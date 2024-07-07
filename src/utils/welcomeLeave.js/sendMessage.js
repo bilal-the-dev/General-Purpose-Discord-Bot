@@ -1,9 +1,16 @@
 const config = require("./../../../welcome_leave.json");
 
+const { GUILD_ID, WELCOME_LEAVE_CHANNEL_ID } = process.env;
+
 const sendMesage = async (client, member, data) => {
-	console.log(data);
+	if (member.guild.id !== GUILD_ID) return;
+
+	onsole.log(data);
+
 	if (!data) return;
-	const ch = client.channels.cache.get(process.env.WELCOME_LEAVE_CHANNEL_ID);
+
+	const ch = client.channels.cache.get(WELCOME_LEAVE_CHANNEL_ID);
+
 	if (!ch) return;
 
 	const content = data.text
