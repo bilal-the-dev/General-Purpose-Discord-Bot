@@ -9,7 +9,7 @@ const clientSecret = process.env.TWITCH_CLIENTSECRET;
 let accessToken = "";
 
 
-console.log({clientId,client_secret});
+console.log({clientId,clientSecret});
 async function loadNotifications() {
   try {
     const data = await fs.readFile(notificationsFile, "utf8");
