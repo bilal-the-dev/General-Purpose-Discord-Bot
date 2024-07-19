@@ -6,7 +6,7 @@ const youtube = google.youtube("v3");
 
 const notificationsFile = path.join(__dirname, "youtubeNotifications.json");
 const apiKey = process.env.YOUTUBE_APIKEY;
-
+console.log({apiKey});
 async function loadNotifications() {
   try {
     const data = await fs.readFile(notificationsFile, "utf8");
