@@ -28,7 +28,7 @@ async function saveNotifications(notifications) {
 
 async function checkIfUserIsLive(username) {
   const url = `https://kick.com/${username}`;
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: true , args: ['--no-sandbox'],});
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: "networkidle2" });
   const liveElement = await page.$(".avatar-holder .avatar-live-tag");

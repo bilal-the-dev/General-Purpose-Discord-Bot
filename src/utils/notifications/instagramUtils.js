@@ -30,7 +30,7 @@ async function saveNotifications(notifications) {
 }
 
 async function initializeBrowser(username, password) {
-  browser = await puppeteer.launch({ headless: true });
+  browser = await puppeteer.launch({ headless: true , args: ['--no-sandbox']});
   page = await browser.newPage();
 
   try {
